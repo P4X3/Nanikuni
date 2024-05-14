@@ -1,0 +1,282 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #0e0e0e, #333);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+.logo:hover h1 {
+  color: #ff7f50;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover:before {
+  transform: scaleX(1);
+}
+
+nav ul li a:hover {
+  color: #ff7f50;
+}
+
+/* Nav Toggle Button */
+.nav-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+  position: relative;
+  height: 100vh; /* Set the section height to fill the viewport */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Send the video to the background */
+  filter: brightness(0.5); /* Apply a dim effect to the video */
+}
+
+.welcome-section {
+  position: relative;
+  height: 100vh; /* Set the section height to fill the viewport */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: calc(120vh - 200px); /* Adjust the height of the video container */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Send the video to the background */
+  filter: brightness(0.5); /* Apply a dim effect to the video */
+}
+
+.welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1; /* Ensure message is displayed above the video */
+  color: #fff; /* Set text color */
+  font-family: 'Roboto', sans-serif; /* Use custom font */
+  opacity: 0; /* Initially hide the message */
+  transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.welcome-message h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Hover Effect */
+.welcome-section:hover .welcome-message {
+  opacity: 1; /* Show message on hover */
+}
+
+/* Transition Effect on Hover */
+.welcome-message h2,
+.welcome-message p {
+  transition: color 0.3s ease; /* Add transition effect */
+}
+
+.welcome-section:hover .welcome-message h2 {
+  color: #ff7f50; /* Change color on hover */
+}
+
+.welcome-section:hover .welcome-message p {
+  color: #fff; /* Change color on hover */
+}
+
+/* Sponsorship Images Styles */
+.sponsorship-images {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0; /* Add padding to create space between video and sponsorship images */
+  background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background */
+  z-index: 2; /* Ensure sponsorship images stay above the video */
+}
+
+.sponsorship-images img {
+  width: 100px; /* Adjust image size as needed */
+  margin: 0 15px; /* Add spacing between images */
+  filter: grayscale(100%) brightness(0.7) contrast(1.2); /* Apply grayscale, adjust brightness and contrast */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition effect */
+}
+
+.sponsorship-images img:hover {
+  transform: scale(1.1); /* Increase image size on hover */
+  opacity: 0.9; /* Reduce opacity on hover */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 150px); /* Adjust the height of the video container */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Send the video to the background */
+  filter: brightness(0.7) contrast(1.2); /* Adjust brightness and contrast */
+}
+
+.welcome-section {
+  position: relative;
+  height: 100vh; /* Set the section height to fill the viewport */
+}
+
+.welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2; /* Ensure message is displayed above the video */
+  color: #fff; /* Set text color */
+  font-family: 'Roboto', sans-serif; /* Use custom font */
+  opacity: 0; /* Initially hide the message */
+  transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.welcome-message h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Hover Effect */
+.welcome-section:hover .welcome-message {
+  opacity: 1; /* Show message on hover */
+}
+
+/* Transition Effect on Hover */
+.welcome-message h2,
+.welcome-message p {
+  transition: color 0.3s ease; /* Add transition effect */
+}
+
+.welcome-section:hover .welcome-message h2 {
+  color: #ff7f50; /* Change color on hover */
+}
+
+.welcome-section:hover .welcome-message p {
+  color: #fff; /* Change color on hover */
+}
